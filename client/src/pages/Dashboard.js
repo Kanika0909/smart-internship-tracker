@@ -38,13 +38,11 @@ function Dashboard() {
 
   const [result, setResult] = useState(null);
 
-  const [selectedStatus, setSelectedStatus] = useState("Applied");
 
   const [search, setSearch] = useState("");
 
   const [loading, setLoading] = useState(true);
   const [jobDesc, setJobDesc] = useState("");
-  const [jobs, setJobs] = useState([]);
   const [form, setForm] = useState({
   role: "",
   company: "",
