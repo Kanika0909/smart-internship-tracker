@@ -41,6 +41,8 @@ function Dashboard() {
 
   const [search, setSearch] = useState("");
 
+  const [, setSelectedStatus] = useState("Applied");
+
   const [loading, setLoading] = useState(true);
   const [jobDesc, setJobDesc] = useState("");
   const [form, setForm] = useState({
@@ -51,15 +53,7 @@ function Dashboard() {
   interviewDate: "",
 });
 
-useEffect(() => {
-  const socket = io("http://localhost:5000");
 
-  socket.on("update", () => {
-    fetchApps(); // or fetchJobs
-  });
-
-  return () => socket.disconnect();
-}, []);
 
 
   const toggleDark = () => {
@@ -108,22 +102,7 @@ useEffect(() => {
   return () => socket.disconnect();
 }, []);
 
-const fetchJobs = async () => {
-  try {
-    const res = await axios.get(
-      "http://localhost:5000/api/apps",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
 
-    setJobs(res.data);
-  } catch (err) {
-    console.error(err);
-  }
-};        
 
   // ✅ DRAG FUNCTION
   const handleDragEnd = async (result) => {
@@ -216,7 +195,7 @@ const fetchJobs = async () => {
     });
 
     // ✅ REFRESH UI
-    fetchJobs();
+    fetchApps();
 
   } catch (err) {
     console.error(err);
