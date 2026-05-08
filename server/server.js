@@ -15,11 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://smart-internship-tracker-eta.vercel.app",
-      "https://smart-internship-tracker-ibc6sz77j-kanika0909s-projects.vercel.app",
-    ],
+    origin: "*",
     credentials: true,
   }),
 );
