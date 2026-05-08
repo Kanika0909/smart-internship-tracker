@@ -15,7 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://your-frontend-url.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://smart-internship-tracker-eta.vercel.app",
+      "https://smart-internship-tracker-ibc6sz77j-kanika0909s-projects.vercel.app",
+    ],
     credentials: true,
   }),
 );
@@ -49,4 +53,4 @@ io.on("connection", (socket) => {
 app.set("io", io);
 
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+http.listen(PORT, () => console.log(`Server running on port ${PORT}`));
