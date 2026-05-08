@@ -19,19 +19,31 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://https://smart-internship-tracker-backend.onrender.com/api/auth/register",
-        form
-      );
+  const res = await axios.post(
+    "https://smart-internship-tracker-backend.onrender.com/api/auth/register",
+    formData
+  );
 
-      alert(res.data.msg);
+  alert("Registered Successfully");
+  navigate("/login");
 
-      // ✅ Redirect to login after register
-      navigate("/login");
+} catch (err) {
+  console.log(err.response?.data || err.message);
 
-    } catch (err) {
-      alert(err.response?.data?.msg || "Error");
-    }
+  alert(
+    err.response?.data?.msg ||
+    err.response?.data?.message ||
+    "Registration failed"
+  );
+} catch (err) {
+  console.log(err.response?.data || err.message);
+
+  alert(
+    err.response?.data?.msg ||
+    err.response?.data?.message ||
+    "Registration failed"
+  );
+}
   };
 
   return (
