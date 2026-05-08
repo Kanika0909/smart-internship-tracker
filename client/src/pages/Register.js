@@ -19,7 +19,7 @@ function Register() {
   e.preventDefault();
 
   try {
-    const res = await axios.post(
+    await axios.post(
       "https://smart-internship-tracker-backend.onrender.com/api/auth/register",
       form
     );
