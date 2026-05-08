@@ -62,7 +62,7 @@ function Dashboard() {
 
   const fetchApps = async () => {
   try {
-    const res = await axios.get("http://https://smart-internship-tracker-backend.onrender.com/api/apps", {
+    const res = await axios.get("https://smart-internship-tracker-backend.onrender.com/api/apps", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -93,7 +93,7 @@ function Dashboard() {
   fetchApps();
 
   // 🔥 SOCKET CONNECTION
-  const socket = io("http://https://smart-internship-tracker-backend.onrender.com");
+  const socket = io("https://smart-internship-tracker-backend.onrender.com");
 
   socket.on("update", () => {
     fetchApps(); // auto refresh
@@ -138,7 +138,7 @@ function Dashboard() {
 
   try {
     await axios.put(
-      `http://https://smart-internship-tracker-backend.onrender.com/api/apps/${moved._id}`,
+      `https://smart-internship-tracker-backend.onrender.com/api/apps/${moved._id}`,
       { status: dest },
       {
         headers: {
@@ -173,7 +173,7 @@ function Dashboard() {
     };
 
     await axios.post(
-      "http://https://smart-internship-tracker-backend.onrender.com/api/apps",
+      "https://smart-internship-tracker-backend.onrender.com/api/apps",
       data,
       {
         headers: {
@@ -233,7 +233,7 @@ const runMatch = async (jd) => {
     formData.append("jobDescription", jd);
 
     const res = await axios.post(
-      "http://https://smart-internship-tracker-backend.onrender.com/api/ai/match-file",
+      "https://smart-internship-tracker-backend.onrender.com/api/ai/match-file",
       formData,
       {
         headers: {
@@ -371,7 +371,7 @@ const runMatch = async (jd) => {
                                 onClick={async () => {
                                   try {
                                     await axios.delete(
-                                      `http://https://smart-internship-tracker-backend.onrender.com/api/apps/${job._id}`,
+                                      `https://smart-internship-tracker-backend.onrender.com/api/apps/${job._id}`,
                                       {
                                         headers: {
                                           Authorization: `Bearer ${localStorage.getItem("token")}`,

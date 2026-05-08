@@ -25,7 +25,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://https://smart-internship-tracker-backend.onrender.com/api/auth/login",
+        "https://smart-internship-tracker-backend.onrender.com/api/auth/login",
         form
       );
 

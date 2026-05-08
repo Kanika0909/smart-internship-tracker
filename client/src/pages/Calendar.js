@@ -13,7 +13,7 @@ function CalendarPage() {
   // 🔥 FETCH DATA
   const fetchApps = async () => {
     try {
-      const res = await axios.get("http://https://smart-internship-tracker-backend.onrender.com/api/apps", {
+      const res = await axios.get("https://smart-internship-tracker-backend.onrender.com/api/apps", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setApps(res.data);
@@ -27,7 +27,7 @@ function CalendarPage() {
   }, []); // eslint-disable-line
 
   useEffect(() => {
-  const socket = io("http://https://smart-internship-tracker-backend.onrender.com");
+  const socket = io("https://smart-internship-tracker-backend.onrender.com");
 
   socket.on("update", () => {
     fetchApps(); // refresh calendar when data changes

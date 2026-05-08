@@ -22,7 +22,7 @@ export default function AIMatchModal({ onClose }) {
     formData.append("jobDescription", jd);
 
     const res = await axios.post(
-      "http://https://smart-internship-tracker-backend.onrender.com/api/ai/match-file",
+      "https://smart-internship-tracker-backend.onrender.com/api/ai/match-file",
       formData,
       {
         headers: {
