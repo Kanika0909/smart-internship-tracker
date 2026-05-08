@@ -6,7 +6,7 @@ export default function Applications() {
   const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
-  const [selectedStatus, setSelectedStatus] = useState("Applied");
+  const [, ] = useState("Applied");
   const [editModal, setEditModal] = useState(false);
   const [editData, setEditData] = useState(null);
 
@@ -29,8 +29,8 @@ export default function Applications() {
   };
 
   useEffect(() => {
-    fetchApps();
-  }, []);
+  fetchApps();
+}, []); // eslint-disable-line
 
   // ADD
   const handleAdd = async () => {

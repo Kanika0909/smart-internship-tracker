@@ -32,8 +32,8 @@ function Analytics() {
 };
 
 useEffect(() => {
-  fetchApps(token);
-}, [token]);
+  fetchApps();
+}, []); // eslint-disable-line
 
   // 📊 BASIC STATS
 const total = apps.length;

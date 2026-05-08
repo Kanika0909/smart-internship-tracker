@@ -24,7 +24,7 @@ function CalendarPage() {
 
   useEffect(() => {
   fetchApps();
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
   const socket = io("http://localhost:5000");
@@ -34,7 +34,7 @@ function CalendarPage() {
   });
 
   return () => socket.disconnect();
-}, []);
+}, []); // eslint-disable-line
 
   // 🔥 GET DAYS OF MONTH
 const getDaysInMonth = () => {
