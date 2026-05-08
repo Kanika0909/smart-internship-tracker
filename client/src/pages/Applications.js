@@ -22,7 +22,7 @@ export default function Applications() {
 
   // FETCH
   const fetchApps = async () => {
-    const res = await axios.get("http://localhost:5000/api/apps", {
+    const res = await axios.get("https://smart-internship-tracker-backend.onrender.com/api/apps", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setApps(res.data);
@@ -45,7 +45,7 @@ export default function Applications() {
     };
 
     await axios.post(
-      "http://localhost:5000/api/apps",
+      "http://https://smart-internship-tracker-backend.onrender.com/api/apps",
       data,
       {
         headers: {
@@ -81,7 +81,7 @@ const openEditModal = (app) => {
 
   // DELETE
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/apps/${id}`, {
+    await axios.delete(`http://https://smart-internship-tracker-backend.onrender.com/api/apps/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchApps();
@@ -113,7 +113,7 @@ const openEditModal = (app) => {
     };
 
     await axios.put(
-      `http://localhost:5000/api/apps/${editData._id}`,
+      `http://https://smart-internship-tracker-backend.onrender.com/api/apps/${editData._id}`,
       data,
       {
         headers: {

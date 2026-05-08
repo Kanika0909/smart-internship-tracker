@@ -19,7 +19,7 @@ function Analytics() {
 
   const fetchApps = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/apps", {
+    const res = await axios.get("https://smart-internship-tracker-backend.onrender.com/api/apps", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
