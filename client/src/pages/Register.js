@@ -16,35 +16,27 @@ function Register() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-  const res = await axios.post(
-    "https://smart-internship-tracker-backend.onrender.com/api/auth/register",
-    formData
-  );
+  try {
+    const res = await axios.post(
+      "https://smart-internship-tracker-backend.onrender.com/api/auth/register",
+      form
+    );
 
-  alert("Registered Successfully");
-  navigate("/login");
+    alert("Registered Successfully");
+    navigate("/login");
 
-} catch (err) {
-  console.log(err.response?.data || err.message);
+  } catch (err) {
+    console.log(err.response?.data || err.message);
 
-  alert(
-    err.response?.data?.msg ||
-    err.response?.data?.message ||
-    "Registration failed"
-  );
-} catch (err) {
-  console.log(err.response?.data || err.message);
-
-  alert(
-    err.response?.data?.msg ||
-    err.response?.data?.message ||
-    "Registration failed"
-  );
-}
-  };
+    alert(
+      err.response?.data?.msg ||
+      err.response?.data?.message ||
+      "Registration failed"
+    );
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top_left,#bfdbfe,#e0e7ff_35%,#f8fafc_70%)] px-4 py-10">
